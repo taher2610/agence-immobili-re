@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>bien :</td>
+        <td> <a href="{{url('property.show' ,{id : contact.property.id ,slug: contact.property.slug}) }} }}" >{{ contact.property.title }}</a> </td>
+    </tr>
+    <tr>
+        <td>firstname</td>
+        <td>{{ contact.firstname }}</td>
+    </tr>
+    <tr>
+        <td>lastname</td>
+        <td>{{contact.lastname}}</td>
+    </tr>
+    <tr>
+        <td>phone</td>
+        <td>{{contact.phone}}</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>{{contact.email}}</td>
+    </tr>
+    <tr>
+        <td>message</td>
+        <td>{{contact.message |nl2br }}</td>
+    </tr>
+
+
+</table>
+
+</body>
+</html>

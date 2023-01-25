@@ -20,5 +20,17 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+
+    App\Controller\:
+        resource: '../src/Controller'
+        exclude: '/src/{DependecyInjection,Entity,Migrations,Tests,Kernel.php}'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Controller\HomeController:
+        tags: ['controller.service_arguments']
+        arguments:
+            $twig: '@twig'
+
+    App\Listener\ImageCacheSubscriber:
+        tags:
+        - { name: doctrine.event_subscriber }
